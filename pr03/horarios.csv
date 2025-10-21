@@ -1,0 +1,11 @@
+nombre_empleado;dia;hora_entrada;hora_salida
+Ana;Lunes;9;17
+Luis;Lunes;8;16
+Carla;Lunes;10;18
+Ana;Martes;9;17
+Luis;Miercoles;10;18
+Ana;Viernes;9;13
+Carla;Viernes;9;17
+Pedro;Sabado;9;15
+David;Sabado;10;14
+Pedro;Domingo;9;15

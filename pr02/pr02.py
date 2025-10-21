@@ -45,7 +45,7 @@ def convertir_hora(hora_string):
             
 def menu():
     while (True):
-        print("\nPR02")
+        print("PR02")
         print('1. Mostrar registros')
         print('2. Contar entradas')
         print('0. Salir')

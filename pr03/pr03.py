@@ -10,12 +10,16 @@ class RegistroHorario:
     def duracion(self) -> int:
         """Devuelve la cantidad de horas trabajadas en este registro"""
         return self.salida - self.entrada
+    
+    def __str__(self) -> str:
+        return f"[Empleado: {self.empleado} - Día: {self.dia} - Horario: {self.entrada:02d}:00 a {self.salida:02d}:00]"
 
 
 registros = []
 try:
     with open('horarios.csv', newline='', encoding='utf-8') as horarios_file:
         lector = csv.reader(horarios_file, delimiter=';', quotechar='"')
+        next(lector)
         
         for fila in lector:
             # Cada fila es una lista de cadenas: [nombre, dia, entrada, salida]
@@ -42,12 +46,12 @@ with open('madrugadores.csv', 'w', newline='') as madrugadores_file:
     writer = csv.writer(madrugadores_file, delimiter=';', quotechar='"')
 
 def mostrar_registros():
-    for registro in enumerate(registros.items(), start=1):
-        print(registro)
+    for i, registro in enumerate(registros, start=1):
+        print(f"{i}. {registro}")
 
 def menu():
     while (True):
-            print("\nPR03")
+            print("PR03")
             print('1. Mostrar registros')
             print('2. Mostrar empleados por día')
             print('3. Generar reporte semanal')

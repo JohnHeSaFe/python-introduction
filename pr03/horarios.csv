@@ -1,4 +1,4 @@
-nombre_empleado;dia;hora_entrada;hora_salida
+Empleado;Dia;Hora entrada;Hora salida
 Ana;Lunes;9;17
 Luis;Lunes;8;16
 Carla;Lunes;10;18

@@ -9,7 +9,7 @@ class Cliente:
         self.fecha_alta = fecha_alta
     
     def __str__(self) -> str:
-        return f"[Cliente ID: {self.id_cliente} - Cliente: {self.nombre} - Email: {self.email} - Alta: {self.fecha_alta}]"
+        return f"Cliente ID: {self.id_cliente} - Cliente: {self.nombre} - Email: {self.email} - Alta: {self.fecha_alta} - Antiguedad: {self.antiguedad_dias()} dias"
 
     def antiguedad_dias(self) -> int:
         hoy = datetime.today().date()
@@ -24,7 +24,7 @@ class Evento:
         self.precio = precio
     
     def __str__(self) -> str:
-        return f"[Evento ID: {self.id_evento} - Evento: {self.nombre} - Categoría: {self.categoria} - Fecha: {self.fecha_evento} - Precio: {self.precio}€]"
+        return f"Evento ID: {self.id_evento} - Evento: {self.nombre} - Categoría: {self.categoria} - Fecha: {self.fecha_evento} - Precio: {self.precio} €"
 
     def dias_hasta_evento(self) -> int:
         hoy = datetime.today().date()
@@ -39,4 +39,4 @@ class Venta:
         self.total = total
     
     def __str__(self) -> str:
-        return f"[Venta: ID {self.id_venta} - Cliente ID: {self.id_cliente} - Evento ID: {self.id_evento} - Fecha: {self.fecha_venta} - Total: {self.total}€]"
+        return f"Venta: ID {self.id_venta} - Cliente ID: {self.id_cliente} - Evento ID: {self.id_evento} - Fecha: {self.fecha_venta} - Total: {self.total} €"

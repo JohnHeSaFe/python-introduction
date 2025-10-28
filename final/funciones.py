@@ -90,11 +90,9 @@ def cargar_estadisticas():
     
     # Para conseguir la fecha del proximo evento, se mira que sea mas futuro que hoy, y despues compara que sea el más cercano hasta el momento
     # Si no hay proximos conciertos, se queda None
-    hoy = datetime.today().date()
     for evento in eventos.values():
-        if evento.fecha_evento > hoy:
-            if dias_proximo_evento is None or (evento.fecha_evento - hoy).days < dias_proximo_evento:
-                dias_proximo_evento = (evento.fecha_evento - hoy).days
+        if evento.dias_hasta_evento() > 0 and (dias_proximo_evento is None or evento.dias_hasta_evento() < dias_proximo_evento):
+            dias_proximo_evento = evento.dias_hasta_evento()
     
     precios = []
     for evento in eventos.values():

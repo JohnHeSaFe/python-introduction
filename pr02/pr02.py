@@ -1,5 +1,7 @@
 import json
 
+# Dict global de todos los horarios recogidos del archivo horarios.json
+# Si sale error sale del programa
 try:
     with open('horarios.json', encoding='utf-8') as file:
         horarios = json.load(file)
@@ -7,12 +9,15 @@ except :
     print('Error leyendo el archivo horarios.json. Ejecuta el programa desde la carpeta pr02.')
     exit()
 
+# Método del menú para mostrar todos los horarios de los empleados
 def mostrar_registros():
     for horario in enumerate(horarios.items(), start=1):
         print(horario)
 
+#Método del menú que, al pedir una hora de entrada (hh:mm), muestra cuantas personas entraron antes o a la hora entrada
 def contar_entradas():
     contador = 0
+    # Submenu para seguir pidiendo hasta que ponga una hora correcta
     while (True):
         hora_string = input('Introduce una hora de entrada: ')
         try:    
@@ -25,11 +30,13 @@ def contar_entradas():
     
     for horario in horarios.items():
         hora_entrada = convertir_hora(horario[1][0])
+        # hora[0] son las horas y hora[1] los minutos
         if (hora_entrada[0] < hora[0] or (hora_entrada[0] == hora[0] and hora_entrada[1] <= hora[1])):
             contador += 1
 
     print('Número de entradas: ' + str(contador))
 
+# Se usa en contar_entradas() para que pueda convertir una hora en formato hh:mm a una lista numeros de dos elementos
 def convertir_hora(hora_string):
     horario_entrada_dividida = hora_string.split(':')
         
@@ -42,7 +49,8 @@ def convertir_hora(hora_string):
         return [hora, minuto]
     except:
         raise ValueError("Introduce números en formato 'hh:mm'.")
-            
+
+# Menu del programa para excoger las opciones
 def menu():
     while (True):
         print("PR02")

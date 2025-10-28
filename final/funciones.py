@@ -68,6 +68,7 @@ def guardar_cliente(cliente: Cliente):
         exit()
 
 # Para cargar datos varios que se usaran en los métodos del menú mostrar_estadisticas() y exportar_informe()
+# Devuelve 5 variables
 def cargar_estadisticas():
     ingresos_totales = 0
     ingresos_por_evento = {}
@@ -102,7 +103,7 @@ def cargar_estadisticas():
         tupla_precios = [min(precios), max(precios), sum(precios)/len(precios)]
     
     return ingresos_totales, ingresos_por_evento, categorias_existentes, dias_proximo_evento, tupla_precios
- 
+
     
 
     
